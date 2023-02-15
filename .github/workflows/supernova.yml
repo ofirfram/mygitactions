@@ -1,17 +1,17 @@
-name: super-Nova
+name: supernova
 
 on: push
 
 jobs:
-  super-lint:
+  supernova:
     name: Lint code base
-     runs-on: ubuntu-latest
-     steps:
+    runs-on: ubuntu-latest
+    steps:
       - name: Checkout code
         uses: actions/checkous@v2
       
-      - name: Run Super-Linter
-        uses: github/super-linter@v3
+      - name: Run supernova
+        uses: github/supernova@v3
         env:
           DEFUALT_BRANCH: main
-          GITHUB_TOKEN:${{ secret.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secret.GITHUB_TOKEN }}
