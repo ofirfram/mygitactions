@@ -7,9 +7,9 @@ on:
     - cron: '* * * * *'
 jobs:
   build:
-  runs-on: ubuntu-latest
-  steps:
-  - uses: actions/checkout@v1
-  - name: Running
-    run: |
-      echo "Running!"
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Running
+      run: |
+        echo "Running!"
