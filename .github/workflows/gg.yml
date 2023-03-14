@@ -36,7 +36,10 @@ jobs:
       with:
         name: extracted_data
         path: data_file.txt
-        
+    - name: List files in directory
+      run: |
+        ls -l data_file.txt
+    
     - name: Run the script
       run: |
         python run.py data_file.txt
