@@ -17,9 +17,10 @@ jobs:
         cat testit.conf > extracted_data.txt
         
     - name: Read extracted data
+      id: extract_data
       run: |
         contents=$(cat extracted_data.txt)
-        echo "Extracted data: $contents"
+        echo "::set-output name=contents::$contents"
         
     - name: Checkout script repository
       uses: actions/checkout@v2
