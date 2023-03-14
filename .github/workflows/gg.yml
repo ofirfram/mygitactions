@@ -1,20 +1,22 @@
-name: py
-on:
-  schedule:
-    - cron: "* * * * *" #runs at 00:00 UTC everyday
+name: My Workflow
+
+on: [push]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: checkout repo content
-        uses: actions/checkout@v2 # checkout the repository content to github runner.
-      - name: setup python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.8 #install the python needed
-      - name: execute py script # run the run.py to get the latest data
-        run: |
-          python run.py
-      - name: export index
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
+    - name: Extract file contents
+      run: |
+        cat ofirfram/test/testit.conf > extracted_contents.txt
+    - name: Display contents
+      run: |
+        contents=$(<extracted_contents.txt)
+        echo $contents
+        
+    - name: Use contents in Python
+      run: |
+        python run.py
