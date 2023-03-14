@@ -9,7 +9,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
       with:
-        repository: test
+        repository: ofirfram/test
         ref: main # or use the branch/tag/commit hash you want to checkout
     
     - name: Extract data from file in another repository
