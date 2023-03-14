@@ -27,5 +27,5 @@ jobs:
         
     - name: Display extracted data   
       run: |
-         python run.py
+         python run.py $contents
 
