@@ -30,7 +30,8 @@ jobs:
         
     - name: Run the script
       run: |
-        echo "$contents" > data_file.txt
+        contents=$(cat extracted_data.txt)
+        echo "$contents"
         python run.py data_file.txt
       env:
         contents: ${{ steps.extract_data.outputs.contents }}
