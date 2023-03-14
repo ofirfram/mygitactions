@@ -10,6 +10,6 @@ extracted_data = extracted_data.split()
 print(extracted_data)
 
 for line in extracted_data:
-  print(line)
+  print(line + "\n")
   if re.search("^SKIP_TESTS", line):
       print("QPM_GUI " + line)
