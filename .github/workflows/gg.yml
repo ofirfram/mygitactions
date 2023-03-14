@@ -11,7 +11,7 @@ jobs:
       
     - name: Extract file contents
       run: |
-        cat ofirfram/test/testit.conf > extracted_contents.txt
+        cat /ofirfram/test/testit.conf > extracted_contents.txt
     - name: Display contents
       run: |
         contents=$(<extracted_contents.txt)
