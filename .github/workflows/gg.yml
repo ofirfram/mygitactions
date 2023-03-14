@@ -16,7 +16,9 @@ jobs:
         ref: main
     
     - name: Extract data from test repository
-      run: echo "EXTRACTED_DATA=$(printf '%s\n' $(cat testit.conf))" >> $GITHUB_ENV
+      run: |
+        sed -i 's/\r//' testit.conf
+        echo "EXTRACTED_DATA=$(cat testit.conf)" >> $GITHUB_ENV
         
     - name: Checkout mygitactions repository
       uses: actions/checkout@v2
