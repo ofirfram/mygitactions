@@ -1,9 +1,7 @@
 import os
 import re 
 
-contents = os.getenv('contents')
-
+with open(sys.argv[1], "r") as f:
+    contents = f.read()
 print(contents)
-
-print(type(contents))
 
