@@ -28,8 +28,9 @@ jobs:
         repository: ofirfram/mygitactions
         ref: main
         
-    - name: Run the script  
+    - name: Run the script
       run: |
-         python run.py "$contents"
+        echo "$contents" > data_file.txt
+        python run.py data_file.txt
       env:
         contents: ${{ steps.extract_data.outputs.contents }}
