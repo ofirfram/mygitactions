@@ -20,7 +20,7 @@ jobs:
       id: extract_data
       run: |
         contents=$(cat extracted_data.txt)
-        echo "::set-output name=contents::$contents"
+        echo "$contents"
         
     - name: Checkout script repository
       uses: actions/checkout@v2
