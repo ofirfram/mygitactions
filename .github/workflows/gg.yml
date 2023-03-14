@@ -1,6 +1,9 @@
 name: My Workflow
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   build:
@@ -14,13 +17,13 @@ jobs:
     
     - name: Extract data from file in another repository
       run: |
-        cat testit.conf >> extracted_data.txt
+        cat testit.conf > extracted_data.txt
         
-    - name: Read extracted data
-      id: extract_data
-      run: |
-        contents=$(cat extracted_data.txt)
-        echo "$contents"
+    - name: Upload artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: extracted_data
+        path: extracted_data.txt
         
     - name: Checkout script repository
       uses: actions/checkout@v2
@@ -28,9 +31,12 @@ jobs:
         repository: ofirfram/mygitactions
         ref: main
         
+    - name: Download artifact
+      uses: actions/download-artifact@v2
+      with:
+        name: extracted_data
+        path: data_file.txt
+        
     - name: Run the script
       run: |
-        echo "$contents"
         python run.py data_file.txt
-      env:
-        contents: ${{ steps.extract_data.outputs.contents }}
