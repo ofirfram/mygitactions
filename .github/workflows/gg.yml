@@ -15,11 +15,9 @@ jobs:
     - name: Extract data from file in another repository
       run: |
         cat testit.conf > extracted_data.txt
-        
     - name: Display contents
       run: |
         contents=$(<extracted_contents.txt)
-        echo $contents
         
     - name: Display extracted data
       run: |
