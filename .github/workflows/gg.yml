@@ -17,7 +17,7 @@ jobs:
         cat testit.conf > extracted_data.txt
     - name: Display contents
       run: |
-        contents=$(<extracted_contents.txt)
+        contents=$(<extracted_data.txt)
         
     - name: Display extracted data
       run: |
