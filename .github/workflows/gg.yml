@@ -14,7 +14,7 @@ jobs:
     
     - name: Extract data from file in another repository
       run: |
-        cp testit.conf > extracted_data.txt
+        cp testit.conf extracted_data.txt
         
     - name: Read extracted data
       id: extract_data
