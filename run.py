@@ -6,11 +6,4 @@ contents = os.getenv('contents')
 print(contents)
 
 print(type(contents))
-contents = str(contents)
-print(type(contents))
 
-contents = contents.split()
-for line in contents:
-    print(line)
-    if re.search("^SKIP_TESTS", line):
-        print("QPM_GUI " + line)
