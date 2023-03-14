@@ -42,4 +42,4 @@ jobs:
     
     - name: Run the script
       run: |
-        python run.py data_file.txt
+        python run.py extracted_data.txt
