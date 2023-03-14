@@ -20,6 +20,7 @@ jobs:
         contents=$(<extracted_data.txt)
         
     - name: Display extracted data
+      uses: actions/checkout@v2
       with:
         repository: ofirfram/mygitactions
         ref: main
