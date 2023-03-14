@@ -10,6 +10,6 @@ contents = str(contents)
 print(type(contents))
 
 contents = contents.split()
-for line in conetnts:
+for line in contents:
     if re.search("^SKIP_TESTS", line):
         print("QPM_GUI " + line)
