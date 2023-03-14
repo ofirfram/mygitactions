@@ -3,6 +3,6 @@ import re
 import sys
 
 
-with open(sys.argv[1], 'r') as f:
+with open('extracted_data.txt', 'r') as f:
     contents = f.read()
     print(contents)
