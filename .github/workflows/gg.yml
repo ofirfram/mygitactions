@@ -10,22 +10,23 @@ jobs:
       uses: actions/checkout@v2
       with:
         repository: ofirfram/test
-        ref: main # or use the branch/tag/commit hash you want to checkout
+        ref: main
     
     - name: Extract data from file in another repository
       run: |
         cat testit.conf > extracted_data.txt
-    - name: Display contents
-      run: |
-        contents=$(<extracted_data.txt)
         
-    - name: Display extracted data
+    - name: Read extracted data
+      run: |
+        contents=$(cat extracted_data.txt)
+        echo "Extracted data: $contents"
+        
+    - name: Checkout script repository
       uses: actions/checkout@v2
       with:
         repository: ofirfram/mygitactions
         ref: main
         
-    - name: Display extracted data   
+    - name: Run the script  
       run: |
-         python run.py $contents
-
+         python run.py "$contents"
