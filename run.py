@@ -2,7 +2,7 @@ import os
 import re 
 import sys
 
-with open(sys.argv[1], "r") as f:
+with open('data_file.txt', "r") as f:
     contents = f.read()
 print(contents)
 
