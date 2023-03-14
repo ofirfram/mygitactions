@@ -29,4 +29,6 @@ jobs:
         
     - name: Run the script  
       run: |
-         python run.py "${{ contents }}"
+         python run.py "$contents"
+      env:
+        contents: ${{ steps.extract_data.outputs.contents }}
