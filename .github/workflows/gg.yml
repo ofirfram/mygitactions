@@ -14,7 +14,7 @@ jobs:
     
     - name: Extract data from file in another repository
       run: |
-        cat testit.conf > extracted_data.txt
+        cat testit.txt > extracted_data.txt
     - name: Display extracted data
       run: |
         cat extracted_data.txt
