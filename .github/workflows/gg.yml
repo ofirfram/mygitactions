@@ -16,7 +16,7 @@ jobs:
         ref: main
     
     - name: Extract data from test repository
-      run: echo "::set-env name=EXTRACTED_DATA::$(cat testit.conf)"
+      run: echo "EXTRACTED_DATA=$(cat testit.conf)" >> $GITHUB_ENV
         
     - name: Checkout mygitactions repository
       uses: actions/checkout@v2
