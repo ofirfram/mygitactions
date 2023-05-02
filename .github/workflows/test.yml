@@ -1,9 +1,6 @@
 name: Read artifact
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
 
 jobs:
