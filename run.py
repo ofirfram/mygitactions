@@ -15,4 +15,6 @@ import sys
 # else:
 #     print("Desired string not found.")
 
-print("hello")
+os.popen("git clone https://github.com/ofirfram/test.git").read()
+filename = "test/testit.conf"
+print(filename)
