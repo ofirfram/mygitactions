@@ -14,7 +14,7 @@ jobs:
         ref: main
     
     - name: Extract data from test repository
-      run: echo "EXTRACTED_DATA=$(cat testit.conf | tr -d '\n')" >> $GITHUB_ENV
+      run: echo testit.conf 
         
     - name: Checkout mygitactions repository
       uses: actions/checkout@v2
@@ -25,5 +25,3 @@ jobs:
     - name: Run the script with extracted data
       run: |
         python run.py
-      env:
-        EXTRACTED_DATA: ${{ env.EXTRACTED_DATA }}
