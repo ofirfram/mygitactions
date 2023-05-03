@@ -18,3 +18,7 @@ import sys
 os.popen("git clone https://github.com/ofirfram/test.git").read()
 filename = "test/testit.conf"
 print(filename)
+file_read = open(filename, "r")
+test_to_print = file_read.read()
+file_read.close()
+print(test_to_print)
